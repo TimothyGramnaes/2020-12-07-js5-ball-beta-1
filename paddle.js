@@ -17,14 +17,28 @@ class Paddle {
         }
     }
 
+    
     display() {
         fill(this.color);
         rect(this.location.x, this.location.y, this.width, this.height);
+        createSprite(this.location.x, this.location.y, this.width, this.height);
     }
 
     move(direction) {
+        // Movement of the paddle
         this.location.add(this.speed[direction])
-    }
+
+        // Hinders the paddle to move outside the playingfield
+        if(this.location.x < 0) {
+            this.location.x = 0
+        } else if (this.location.x + this.width > width) {
+            this.location.x = width - this.width
+
+        } else if(this.location.y < 0) {
+            this.location.y = 0
+        } else if(this.location.y + this.height > height)
+            this.location.y = height - this.height
+        }
 }
 
 

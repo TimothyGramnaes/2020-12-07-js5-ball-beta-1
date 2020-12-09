@@ -60,6 +60,7 @@ function draw() {
     text(`Score: ${playerScore}`, width - 150, 50);
     fill(255);
 
+    
     ball.bounceEdge();
     ball.bouncePaddle();
 
@@ -86,6 +87,8 @@ function draw() {
 
     paddle.display();
     ball.display();
+
+    drawSprite(paddle);
 
     
 }
